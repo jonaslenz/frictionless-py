@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import os
 import tempfile
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Dict, List, Union, cast
@@ -103,7 +104,7 @@ class ZenodoAdapter(Adapter):
                     )
 
             # Upload metadata
-            with tempfile.NamedTemporaryFile("wt") as file:
+            with open("./tempzenodometadata", "wt") as file:
                 data = dict(metadata=metadata.model_dump(exclude_none=True))
                 json.dump(data, file, indent=2)
                 file.flush()
@@ -112,6 +113,7 @@ class ZenodoAdapter(Adapter):
                     metafn=file.name,
                     depid=deposition_id,
                 )
+            os.remove("./tempzenodometadata")
 
             # Upload package
             with tempfile.TemporaryDirectory() as dir:
