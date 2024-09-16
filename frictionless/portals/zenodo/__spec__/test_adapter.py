@@ -6,7 +6,11 @@ import pytest
 from frictionless import Catalog, FrictionlessException, Package, portals
 
 # TODO: recover
+#<<<<<<< windowsuploadzenodo
 # pytestmark = pytest.mark.skip(reason="Cassetes for vcr need to be regenerated")
+#=======
+#pytestmark = pytest.mark.skip(reason="Cassetes for vcr need to be regenerated")
+#>>>>>>> main
 
 PACKAGE_WITHOUT_DP = {
     "title": "Frictionless Data Test Dataset Without Descriptor",
