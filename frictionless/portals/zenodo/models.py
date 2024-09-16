@@ -11,6 +11,13 @@ class ZenodoCreator(BaseModel):
     orcid: Optional[str] = None
 
 
+class ZenodoContributor(BaseModel):
+    name: str
+    affiliation: Optional[str] = None
+    orcid: Optional[str] = None
+    type: str
+
+
 class ZenodoMetadata(BaseModel):
     title: str
     description: str
@@ -19,3 +26,5 @@ class ZenodoMetadata(BaseModel):
     upload_type: Literal["dataset"] = "dataset"
     access_right: Literal["open"] = "open"
     creators: List[ZenodoCreator] = []
+    contributors: List[ZenodoContributor] = []
+    keywords: List[str] = None
