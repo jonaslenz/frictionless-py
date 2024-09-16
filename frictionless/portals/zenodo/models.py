@@ -27,4 +27,4 @@ class ZenodoMetadata(BaseModel):
     access_right: Literal["open"] = "open"
     creators: List[ZenodoCreator] = []
     contributors: List[ZenodoContributor] = []
-    keywords: List[str] = None
+    keywords: List[str] = []
