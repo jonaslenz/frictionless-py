@@ -469,7 +469,6 @@ def test_zenodo_adapter_read_record_data_remote(options_with_dp_with_remote_reso
 # Write
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
 @pytest.mark.vcr
 def test_zenodo_adapter_write(tmp_path):
     control = portals.ZenodoControl(
@@ -483,7 +482,7 @@ def test_zenodo_adapter_write(tmp_path):
     assert deposition_id == 7098723
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_ods(tmp_path):
     control = portals.ZenodoControl(
@@ -497,7 +496,7 @@ def test_zenodo_adapter_write_ods(tmp_path):
     assert deposition_id == 7098739
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_jsonl(tmp_path):
     control = portals.ZenodoControl(
@@ -511,7 +510,7 @@ def test_zenodo_adapter_write_jsonl(tmp_path):
     assert deposition_id == 7098741
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_ndjson(tmp_path):
     control = portals.ZenodoControl(
@@ -525,7 +524,7 @@ def test_zenodo_adapter_write_ndjson(tmp_path):
     assert deposition_id == 7098743
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_with_descriptor(tmp_path):
     descriptor = {
@@ -553,7 +552,7 @@ def test_zenodo_adapter_write_with_descriptor(tmp_path):
     assert deposition_id == 7098745
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.skip
 @pytest.mark.vcr
 def test_zenodo_adapter_write_without_apikey():
@@ -567,7 +566,7 @@ def test_zenodo_adapter_write_without_apikey():
     assert "AssertionError" in str(excinfo)
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_without_wrong_apikey():
     control = portals.ZenodoControl(
@@ -584,7 +583,7 @@ def test_zenodo_adapter_write_without_wrong_apikey():
     )
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.skip
 @pytest.mark.vcr
 def test_zenodo_adapter_write_without_metadata(tmp_path):
@@ -598,7 +597,7 @@ def test_zenodo_adapter_write_without_metadata(tmp_path):
     assert "Zenodo API Metadata Creation error" in error.message
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_default_base_url(tmp_path):
     control = portals.ZenodoControl(
@@ -607,7 +606,7 @@ def test_zenodo_adapter_write_default_base_url(tmp_path):
     assert control.base_url == "https://zenodo.org/api/"
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.skip
 @pytest.mark.vcr
 def test_zenodo_adapter_write_without_base_url():
@@ -618,7 +617,7 @@ def test_zenodo_adapter_write_without_base_url():
     assert "AssertionError" in str(excinfo)
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_read_package_published_to_zenodo():
     package = Package("https://zenodo.org/record/7096849")
@@ -628,7 +627,7 @@ def test_zenodo_adapter_write_read_package_published_to_zenodo():
     ]
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_with_inline_data(tmp_path):
     descriptor = {
@@ -645,7 +644,7 @@ def test_zenodo_adapter_write_resources_with_inline_data(tmp_path):
     assert deposition_id == 7098747
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_with_remote_url(tmp_path):
     descriptor = {
@@ -674,7 +673,7 @@ def test_zenodo_adapter_write_resources_with_remote_url(tmp_path):
     assert deposition_id == 7098749
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_with_deposition_id(tmp_path):
     control = portals.ZenodoControl(
@@ -688,7 +687,7 @@ def test_zenodo_adapter_write_resources_with_deposition_id(tmp_path):
     assert deposition_id == 7098476
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_with_deposition_url(tmp_path):
     control = portals.ZenodoControl(
@@ -701,7 +700,7 @@ def test_zenodo_adapter_write_resources_with_deposition_url(tmp_path):
     assert deposition_id == 7098479
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_to_publish(tmp_path):
     control = portals.ZenodoControl(
@@ -714,7 +713,7 @@ def test_zenodo_adapter_write_resources_to_publish(tmp_path):
     assert deposition_id == 7098751
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.skip
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_in_sandbox_without_metafile_partial_package_metadata(
@@ -729,7 +728,7 @@ def test_zenodo_adapter_write_resources_in_sandbox_without_metafile_partial_pack
     assert deposition_id == 1132344
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.skip
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_with_metadata_json(sandbox_api, tmp_path):
@@ -750,7 +749,7 @@ def test_zenodo_adapter_write_resources_with_metadata_json(sandbox_api, tmp_path
     assert deposition_id == 1139855
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.skip
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_in_sandbox_without_metafile(
@@ -765,7 +764,7 @@ def test_zenodo_adapter_write_resources_in_sandbox_without_metafile(
     assert deposition_id == 1132346
 
 
-@pytest.mark.skipif(platform.type == "windows", reason="Fix on Windows")
+
 @pytest.mark.vcr
 def test_zenodo_adapter_write_resources_without_metafile(tmp_path):
     control = portals.ZenodoControl(tmp_path=tmp_path)
