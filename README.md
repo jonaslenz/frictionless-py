@@ -61,3 +61,4 @@ $ frictionless validate data/invalid.csv
 
 Please visit our documentation portal:
 - https://framework.frictionlessdata.io
+
